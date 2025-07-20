@@ -31,6 +31,7 @@
     border-radius:10px;
     box-shadow:0 0 20px blue;
     border:1px solid blue;
+    overflow: hidden;
 }
 
 .left, .right{
@@ -59,7 +60,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:px;
+    color:purple;
 }
 
 #date{
@@ -81,21 +82,25 @@
     height:15vh;
     margin-top:50px;    
     font-size:40px;
-    background-color:blue;
+    background-color:navy;
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    border:1px solid red;
-    border-radius:10px;             
+    border:1px solid purple;
+    border-radius:20px;             
 }
 
 /* mobile view */
 @media (max-width:480px){
+    .box-container{
+        width:80vw;
+    }
     .calendar{
         flex-direction:column;
-        /* width:80%; */
-        height:55vh;
+        width:100%;
+        height:60vh;
+        overflow: hidden;
     }
     .left{
     width:100%;
@@ -106,6 +111,7 @@
     width:100%;
     height:50%;
     gap:20px;
+    border-radius:0;
 }
 .timee{ 
     width:100%;
@@ -136,23 +142,28 @@
 
 /* tablet view */
 @media (min-width:481px) and (max-width:1024px){
+     .box-container{
+        width:83vw;
+    }
     .calendar{
         flex-direction:column;
-        width:80vw;
-        height:60vh;
+        width:100%;
+        height:70vh;
+        overflow: hidden;
     }
     .left{
     width:100%;
     height:50%;
-    /* gap:20px; */
+    gap:30px;
     }
 .right{
     width:100%;
     height:50%;
-    gap:20px;
+    gap:30px;
+    border-radius:0;
 }
 .timee{ 
-    width:80%;
+    width:100%;
     height:10vh;
     font-size:3.5rem;
  }
@@ -178,6 +189,7 @@
         width:80vw;
         height:60vh;
         border-radius:20px;
+         overflow: hidden;
     }
 
 #date{

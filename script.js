@@ -18,14 +18,21 @@
         year.innerHTML = today.getFullYear();                  
 
         
-        function updateClock(){                 
-            const clockElement=document.getElementById("hour");
-            const now=new Date();
-            const hours=now.getHours().toString().padStart(2,'0');
-            const minutes=now.getMinutes().toString().padStart(2,'0');
-            const seconds=now.getSeconds().toString().padStart(2,'0');
+      function updateClock() {                 
+          const clockElement = document.getElementById("hour");
+          const now = new Date();
+          let hours = now.getHours();
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          const seconds = now.getSeconds().toString().padStart(2, '0');
 
-            clockElement.textContent=`IST - ${hours}:${minutes}:${seconds}`;
-        }
+          // Convert to 12-hour format and determine AM/PM
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // hour '0' should be '12'
+          hours = hours.toString().padStart(2, '0');
+
+          clockElement.textContent = `IST - ${hours}:${minutes}:${seconds} ${ampm}`;
+      }
+
         updateClock();
         setInterval(updateClock,1000);
